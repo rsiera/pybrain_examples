@@ -6,6 +6,7 @@ import os
 from pybrain.tools.xml import NetworkWriter
 
 from pybrain_examples.nn_numbers_recognizer.constants import NETWORKS_DIR
+from pybrain_examples.nn_numbers_recognizer.utils import _ensure_dir
 
 
 class NeuralNetworkWriter(object):
@@ -22,10 +23,5 @@ class NeuralNetworkWriter(object):
         today = datetime.date.today().strftime("%Y_%m_%d")
         network_path = os.path.join(NETWORKS_DIR, today)
         network_name = '%s_%s.xml' % (self.trainer.totalepochs, self.hidden_neurons)
-        self._ensure_dir(network_path)
+        _ensure_dir(network_path)
         return os.path.join(network_path, network_name)
-
-    @classmethod
-    def _ensure_dir(cls, network_path):
-        if not os.path.exists(network_path):
-            os.makedirs(network_path)
