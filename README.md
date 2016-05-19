@@ -9,4 +9,7 @@ Includes three examples of Machine Learning done in PyBrain.
     * run python play_nn.py in order to check how NN deal with the generated map
 - nn_pygame_pong - ping-pong game controlled by trained NN
     * run python run_py in order to check how NN trains/plays ping - pong
-  - nn_handwritten_recognizer - simple NN which is trained to recognize handwritten numbers
+- nn_numbers_recognizer - simple NN which is trained to recognize handwritten numbers
+    * python train_nn.py trains NN 
+    * python proces_data.py creates input image, slide windows over it and mark predicted answers
+
