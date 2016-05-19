@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
     writer = NeuralNetworkWriter(trainer, HIDDEN_NEURONS)
 
-    for i in range(100):
+    for _ in range(100):
         trainer.trainEpochs(50)
         training_error = get_percent_error(trainer, training_dataset)
         validation_error = get_percent_error(trainer, validation_dataset)
