@@ -74,8 +74,8 @@ class FootballDataCsv(object):
     AWAY_TEAM_SHOTS = 12
     HOME_TEAM_SHOTS_ON_TARGET = 13
     AWAY_TEAM_SHOTS_ON_TARGET = 14
-    HOME_TEAM_CORNERS = 16
-    AWAY_TEAM_CONVERS = 17
+    HOME_TEAM_CORNERS = 17
+    AWAY_TEAM_CONVERS = 18
     HOME_TEAM_RED_CARDS = 21
     AWAY_TEAM_RED_CARDS = 22
     B365H = 23
@@ -139,8 +139,20 @@ class FootballDataCsv(object):
             header_row = next(historical_data)
 
             mandatory_fields = {
+                'FTR': FootballDataCsv.OUTPUT,
+                'HTHG': FootballDataCsv.HALF_TIME_HOME_GOLS,
+                'HTAG': FootballDataCsv.HALF_TIME_AWAY_GOLS,
                 'HS': FootballDataCsv.HOME_TEAM_SHOTS,
                 'AS': FootballDataCsv.AWAY_TEAM_SHOTS,
+                'HST': FootballDataCsv.HOME_TEAM_SHOTS_ON_TARGET,
+                'AST': FootballDataCsv.AWAY_TEAM_SHOTS_ON_TARGET,
+                'HC': FootballDataCsv.HOME_TEAM_CORNERS,
+                'AC': FootballDataCsv.AWAY_TEAM_CONVERS,
+                'HR': FootballDataCsv.HOME_TEAM_RED_CARDS,
+                'AR': FootballDataCsv.AWAY_TEAM_RED_CARDS,
+                'B365H': FootballDataCsv.B365H,
+                'B365D': FootballDataCsv.B365D,
+                'B365A': FootballDataCsv.B365A,
             }
             for field, column in mandatory_fields.iteritems():
                 if field not in header_row[column]:
